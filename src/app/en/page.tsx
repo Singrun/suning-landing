@@ -19,7 +19,27 @@ export default async function Page() {
       {/* Project section */}
       <div className="relative bg-[#faf7f2]">
         <GrainOverlay />
-        <GalleryBlock html={text1} label="Project" />
+        <GalleryBlock
+          html={text1}
+          label="Project"
+          images={[
+            {
+              src: "/img/1.jpg",
+              alt: "Guardian — sculpture rendering, panda and Arabian oryx interlocking forms",
+              layout: "wide",
+            },
+            {
+              src: "/img/2.jpg",
+              alt: "Guardian — elevation study with site context",
+              layout: "portrait",
+            },
+            {
+              src: "/img/3.jpg",
+              alt: "Guardian — detail mockup, material and form study",
+              layout: "portrait",
+            },
+          ]}
+        />
       </div>
 
       {/* Video section — dark background */}
@@ -28,7 +48,17 @@ export default async function Page() {
       {/* Archive / CV section */}
       <div className="relative bg-[#faf7f2]">
         <GrainOverlay />
-        <GalleryBlock html={text2} label="Archive" />
+        <GalleryBlock
+          html={text2}
+          label="Archive"
+          images={[
+            {
+              src: "/img/4.jpg",
+              alt: "SUNING — studio and practice",
+              layout: "wide",
+            },
+          ]}
+        />
       </div>
 
       <Divider />
