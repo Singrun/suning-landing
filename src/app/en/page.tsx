@@ -79,10 +79,10 @@ export default async function Page() {
           <p className="mt-4 font-body text-sm text-[#b8b2a8]">
             For collaborations and inquiries:{" "}
             <a
-              href="mailto:hello@example.com"
+              href="mailto:sudaninmyeyes@126.com"
               className="text-[#b8974b] underline underline-offset-4 transition-colors hover:text-[#1c1917]"
             >
-              hello@example.com
+              sudaninmyeyes@126.com
             </a>
           </p>
           <p className="mt-8 font-body text-xs text-[#d4cfc6]">
