@@ -1,4 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SUNING — Landing Page
+
+Premium, calm, editorial artist landing page.
+
+## What’s inside
+- **English landing page**: `/en`
+- **Chinese placeholder**: `/zh` (ready for later content)
+- Extracts text from DOCX at build time and renders it as editorial typography
+- Embeds a playable video in-page
+
+## Content sources
+
+### Text (DOCX → HTML at build time)
+- `content/docx/en/text-1.docx`
+- `content/docx/en/text-2.docx`
+
+These are parsed with `mammoth` and sanitized before rendering.
+
+### Video
+- `public/media/reel.mp4`
+
+### Hero visual
+- Placeholder: `public/hero.svg`
+- Replace it later with your real hero image (e.g., `public/hero.jpg`) and update `src/components/Hero.tsx`.
+
+## Quick edits you’ll likely want
+- Hero statement: `src/app/en/page.tsx`
+- Contact email: `src/app/en/page.tsx`
+
+## Development
 
 ## Getting Started
 
@@ -14,23 +43,14 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open:
+- http://localhost:3000/en
+- http://localhost:3000/zh
 
 ## Deploy on Vercel
+1. Push this project to GitHub
+2. In Vercel, **Import Project** → select the repo
+3. Framework preset: Next.js (auto)
+4. Build command: `npm run build` (default)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is designed to be statically generated (no server dependency at runtime).
