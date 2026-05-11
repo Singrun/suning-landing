@@ -9,7 +9,7 @@ import { GrainOverlay } from "@/components/InkTexture";
 export const dynamic = "force-static";
 
 export default async function Page() {
-  const { text1, text2 } = await loadEnContent();
+  const { text1, text2, text3 } = await loadEnContent();
 
   return (
     <>
@@ -59,6 +59,12 @@ export default async function Page() {
             },
           ]}
         />
+      </div>
+
+      {/* Profile / Artist Bio section */}
+      <div className="relative bg-[#faf7f2]">
+        <GrainOverlay />
+        <GalleryBlock html={text3} label="Profile" />
       </div>
 
       <Divider />
