@@ -99,8 +99,7 @@ export default function GalleryBlock({
                 <img
                   src={wideImg.src}
                   alt={wideImg.alt}
-                  className="block w-full object-cover"
-                  style={{ maxHeight: "560px" }}
+                  className="block w-full object-contain"
                   loading="lazy"
                 />
               </div>

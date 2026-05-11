@@ -62,7 +62,7 @@ export default async function Page() {
       </div>
 
       {/* Profile / Artist Bio section */}
-      <div className="relative bg-[#faf7f2]">
+      <div className="relative bg-[#f3efe9]">
         <GrainOverlay />
         <GalleryBlock html={text3} label="Profile" />
       </div>
