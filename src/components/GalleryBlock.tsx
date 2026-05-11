@@ -24,7 +24,7 @@ export default function GalleryBlock({
   label,
   images,
 }: {
-  html: string;
+  html?: string;
   label: string;
   images?: GalleryImage[];
 }) {
@@ -110,7 +110,7 @@ export default function GalleryBlock({
             </motion.div>
           )}
 
-          <Prose html={html} />
+          {html && <Prose html={html} />}
 
           {/* ── Portrait duo ── */}
           {portraits.length > 0 && (

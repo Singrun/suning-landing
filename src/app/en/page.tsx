@@ -67,6 +67,21 @@ export default async function Page() {
         <GalleryBlock html={text3} label="Profile" />
       </div>
 
+      {/* News / Press coverage section */}
+      <div className="relative bg-[#faf7f2]">
+        <GrainOverlay />
+        <GalleryBlock
+          label="News"
+          images={[
+            {
+              src: "/img/report.jpg",
+              alt: "SUNING — press coverage feature",
+              layout: "wide",
+            },
+          ]}
+        />
+      </div>
+
       <Divider />
 
       {/* Footer */}
