@@ -13,7 +13,7 @@ export default async function Page() {
 
   return (
     <>
-      <LocaleToggle current="en" />
+      <LocaleToggle />
       <Hero />
 
       {/* Project section */}
