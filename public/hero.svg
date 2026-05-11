@@ -1,18 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6f4ef" />
-      <stop offset="1" stop-color="#e9e6df" />
-    </linearGradient>
-    <filter id="n">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
-      <feColorMatrix
-        type="matrix"
-        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .08 0"
-      />
+    <radialGradient id="g1" cx="30%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="70%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#2a2520" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
     </filter>
+    <mask id="arch">
+      <rect width="1600" height="1200" fill="black"/>
+      <circle cx="800" cy="800" r="700" fill="white" opacity="0.08"/>
+      <circle cx="800" cy="800" r="650" fill="white" opacity="0.06"/>
+      <circle cx="800" cy="800" r="600" fill="white" opacity="0.04"/>
+    </mask>
   </defs>
-  <rect width="1600" height="900" fill="url(#g)" />
-  <rect width="1600" height="900" filter="url(#n)" opacity="0.45" />
-</svg>
 
+  <!-- Base -->
+  <rect width="1600" height="1200" fill="url(#g1)"/>
+
+  <!-- Warm glow -->
+  <rect width="1600" height="1200" fill="url(#g2)"/>
+
+  <!-- Arch circles -->
+  <rect width="1600" height="1200" fill="#ffffff" mask="url(#arch)"/>
+
+  <!-- Noise layer -->
+  <rect width="1600" height="1200" filter="url(#noise)" opacity="0.04"/>
+
+  <!-- Fine decorative lines -->
+  <line x1="120" y1="850" x2="500" y2="850" stroke="#b8974b" stroke-width="0.5" opacity="0.3"/>
+  <line x1="120" y1="860" x2="380" y2="860" stroke="#b8974b" stroke-width="0.3" opacity="0.15"/>
+</svg>

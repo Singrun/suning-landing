@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader } from "next/font/google";
+import { Cormorant_Garamond, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const newsreader = Newsreader({
-  variable: "--font-newsreader",
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: "SUNING — Artist",
-  description: "Official landing page for SUNING.",
+  description:
+    "Contemporary artist SUNING — sculpture, architecture, and cross-cultural visual storytelling.",
 };
 
 export default function RootLayout({
@@ -23,8 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${newsreader.variable} h-full antialiased`}>
-      <body className="min-h-full">{children}</body>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${newsreader.variable} h-full`}
+    >
+      <body className="min-h-full bg-[#faf7f2] text-[#1c1917] antialiased">
+        {children}
+      </body>
     </html>
   );
 }

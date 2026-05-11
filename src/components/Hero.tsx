@@ -1,43 +1,145 @@
-import Image from "next/image";
-import SectionReveal from "./SectionReveal";
+"use client";
 
-export default function Hero({
-  artistName,
-  statement,
-}: {
-  artistName: string;
-  statement: string;
-}) {
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import InkTexture from "./InkTexture";
+
+/**
+ * Full-bleed nocturnal hero with:
+ * - Dark ink-wash background with noise texture
+ * - Animated golden accent line
+ * - Staggered text reveals
+ * - Subtle scroll parallax on the texture layer
+ */
+export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+
   return (
-    <section className="relative min-h-[78svh] w-full overflow-hidden">
-      <Image src="/hero.svg" alt="" fill priority className="object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[color:var(--background)]/70" />
+    <section
+      ref={ref}
+      className="relative flex min-h-[105svh] w-full flex-col justify-end overflow-hidden bg-[#111110]"
+    >
+      {/* Noise texture with parallax */}
+      <InkTexture className="opacity-[0.06]" />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-14">
-        <SectionReveal>
-          <p className="text-xs uppercase tracking-[0.22em] text-neutral-600">Artist</p>
-        </SectionReveal>
-        <SectionReveal delay={0.06}>
-          <h1 className="mt-4 font-serif text-5xl md:text-7xl font-semibold tracking-tight text-neutral-950">
-            {artistName}
-          </h1>
-        </SectionReveal>
-        <SectionReveal delay={0.12}>
-          <p className="mt-5 max-w-xl text-base md:text-lg leading-relaxed text-neutral-700">
-            {statement}
-          </p>
-        </SectionReveal>
-        <SectionReveal delay={0.18}>
-          <a
-            href="#video"
-            className="group mt-10 inline-flex items-center gap-3 border border-neutral-900/20 bg-white/70 px-5 py-3 text-sm text-neutral-950 backdrop-blur transition hover:bg-white"
-          >
-            Watch Video
-            <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
-        </SectionReveal>
+      {/* Subtle radial glow behind text */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 30% 80%, rgba(184,151,75,0.08) 0%, transparent 60%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Decorative geometric element: faint concentric arcs */}
+      <svg
+        className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-[0.03]"
+        viewBox="0 0 400 800"
+        aria-hidden="true"
+      >
+        <circle
+          cx="400"
+          cy="400"
+          r="380"
+          fill="none"
+          stroke="white"
+          strokeWidth="0.5"
+        />
+        <circle
+          cx="400"
+          cy="400"
+          r="350"
+          fill="none"
+          stroke="white"
+          strokeWidth="0.3"
+        />
+        <circle
+          cx="400"
+          cy="400"
+          r="300"
+          fill="none"
+          stroke="white"
+          strokeWidth="0.2"
+        />
+      </svg>
+
+      {/* Text content — anchored bottom-left */}
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 md:pb-24 lg:pb-32">
+        {/* Golden line draws first */}
+        <div className="mb-8 max-w-[200px]">
+          <motion.div
+            className="golden-line"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{
+              duration: 1.5,
+              delay: 0.3,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            style={{ transformOrigin: "left" }}
+            aria-hidden="true"
+          />
+        </div>
+
+        {/* Label */}
+        <motion.p
+          className="mb-4 font-body text-xs uppercase tracking-[0.3em] text-[#b8974b]"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.7,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          Artist &amp; Sculptor
+        </motion.p>
+
+        {/* Name — the loudest text */}
+        <motion.h1
+          className="font-display text-6xl font-light tracking-tight text-white sm:text-7xl md:text-8xl lg:text-9xl"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            delay: 0.9,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          SUNING
+        </motion.h1>
+
+        {/* Statement */}
+        <motion.p
+          className="mt-6 max-w-lg font-body text-base font-light leading-relaxed text-white/60 sm:text-lg md:text-xl"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 1.2,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          Contemporary visual artist bridging Eastern and Arab cultures
+          through sculpture, architecture, and narrative form.
+        </motion.p>
+
+        {/* Scroll hint — subtle, elegant */}
+        <motion.div
+          className="mt-12 flex items-center gap-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+        >
+          <span
+            className="h-10 w-px animate-shimmer bg-[#b8974b]/40"
+            aria-hidden="true"
+          />
+          <span className="font-body text-xs uppercase tracking-[0.25em] text-white/25">
+            Scroll
+          </span>
+        </motion.div>
       </div>
     </section>
   );
