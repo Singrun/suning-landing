@@ -15,14 +15,14 @@ export default function ZhPage() {
         </div>
 
         <h1 className="font-display text-5xl font-light tracking-tight text-[#1c1917] sm:text-6xl">
-          中文版
+          Chinese Version
         </h1>
 
         <p className="mt-4 max-w-md font-body text-base leading-relaxed text-[#b8b2a8]">
-          中文内容即将上线。敬请期待。
+          Chinese content is coming soon. Stay tuned.
         </p>
         <p className="mt-2 font-body text-sm italic text-[#d4cfc6]">
-          Chinese version coming soon.
+          Meanwhile, you can view the English version.
         </p>
 
         <Link

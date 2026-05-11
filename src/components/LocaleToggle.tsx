@@ -33,7 +33,7 @@ export default function LocaleToggle({ current }: { current: "en" | "zh" }) {
             }
             href="/zh"
           >
-            中文
+            Chinese
           </Link>
         </nav>
       </div>
