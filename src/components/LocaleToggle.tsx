@@ -12,10 +12,10 @@ export default function LocaleToggle() {
     <nav className="fixed top-8 left-8 z-50 flex items-center gap-6">
       <Link
         href="/"
-        className="font-display text-sm tracking-[0.3em] uppercase text-[#111110] mix-blend-difference"
-        style={{ color: "#b8974b" }}
+        className="font-display text-sm tracking-[0.3em] text-[#111110] mix-blend-difference"
+         style={{ color: "#b8974b" }}
       >
-        SUNING
+        {isZh ? "苏宁" : "SUNING"}
       </Link>
       <Link
         href={toggleHref}
