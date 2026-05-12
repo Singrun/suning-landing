@@ -13,7 +13,7 @@ import InkTexture from "./InkTexture";
  */
 export default function Hero({
   name = "SUNING",
-  label = "Artist & Sculptor",
+  label = "ARTIST & CURATOR",
   statement = "Contemporary visual artist bridging Eastern and Arab cultures through sculpture, architecture, and narrative form.",
   scrollHint = "Scroll",
 }: {

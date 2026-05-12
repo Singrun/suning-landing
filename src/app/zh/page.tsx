@@ -16,7 +16,7 @@ export default async function ZhPage() {
       <LocaleToggle />
       <Hero
         name="苏宁"
-        label="艺术家 / 雕塑家"
+        label="艺术家 / 策展人"
         statement="当代视觉艺术家，以雕塑、建筑与叙事形态连接东方与阿拉伯文化。"
         scrollHint="向下滚动"
       />
