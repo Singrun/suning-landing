@@ -75,7 +75,7 @@ export default async function Page() {
           images={[
             {
               src: "/img/report.jpg",
-              alt: "SUNING — press coverage feature",
+              alt: "GULF TIMES,2023",
               layout: "wide",
             },
           ]}
