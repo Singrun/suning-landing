@@ -9,3 +9,11 @@ export async function loadEnContent() {
   return { text1, text2, text3 };
 }
 
+export async function loadZhContent() {
+  const base = process.cwd();
+  const text1 = await parseDocxToHtml(path.join(base, "content/docx/zh/text-1.docx"));
+  const text2 = await parseDocxToHtml(path.join(base, "content/docx/zh/text-2.docx"));
+  const text3 = await parseDocxToHtml(path.join(base, "content/docx/zh/text-3.docx"));
+  return { text1, text2, text3 };
+}
+

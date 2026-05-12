@@ -11,7 +11,15 @@ import InkTexture from "./InkTexture";
  * - Staggered text reveals
  * - Subtle scroll parallax on the texture layer
  */
-export default function Hero() {
+export default function Hero({
+  label = "Artist & Sculptor",
+  statement = "Contemporary visual artist bridging Eastern and Arab cultures through sculpture, architecture, and narrative form.",
+  scrollHint = "Scroll",
+}: {
+  label?: string;
+  statement?: string;
+  scrollHint?: string;
+}) {
   const ref = useRef<HTMLElement>(null);
 
   return (
@@ -93,7 +101,7 @@ export default function Hero() {
             ease: [0.16, 1, 0.3, 1],
           }}
         >
-          Artist &amp; Sculptor
+          {label}
         </motion.p>
 
         {/* Name — the loudest text */}
@@ -121,8 +129,7 @@ export default function Hero() {
             ease: [0.16, 1, 0.3, 1],
           }}
         >
-          Contemporary visual artist bridging Eastern and Arab cultures
-          through sculpture, architecture, and narrative form.
+          {statement}
         </motion.p>
 
         {/* Scroll hint — subtle, elegant */}
@@ -137,7 +144,7 @@ export default function Hero() {
             aria-hidden="true"
           />
           <span className="font-body text-xs uppercase tracking-[0.25em] text-white/25">
-            Scroll
+            {scrollHint}
           </span>
         </motion.div>
       </div>

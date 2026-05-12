@@ -1,16 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function LocaleToggle() {
+  const pathname = usePathname();
+  const isZh = pathname.startsWith("/zh");
+  const toggleHref = isZh ? "/en" : "/zh";
+
   return (
-    <header className="fixed left-0 right-0 top-0 z-50">
-      <div className="flex items-center justify-between px-6 py-5">
-        <Link
-          href="/en"
-          className="font-display text-lg font-medium tracking-[0.08em] text-[#faf7f2]/90 transition-colors hover:text-[#faf7f2]"
-        >
-          SUNING
-        </Link>
-      </div>
-    </header>
+    <nav className="fixed top-8 left-8 z-50 flex items-center gap-6">
+      <Link
+        href="/"
+        className="font-display text-sm tracking-[0.3em] uppercase text-[#111110] mix-blend-difference"
+        style={{ color: "#b8974b" }}
+      >
+        SUNING
+      </Link>
+      <Link
+        href={toggleHref}
+        className="font-body text-xs tracking-widest uppercase text-white/40 hover:text-white/80 transition-colors duration-500"
+      >
+        {isZh ? "EN" : "中文"}
+      </Link>
+    </nav>
   );
 }
