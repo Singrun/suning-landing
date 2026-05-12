@@ -12,10 +12,12 @@ import InkTexture from "./InkTexture";
  * - Subtle scroll parallax on the texture layer
  */
 export default function Hero({
+  name = "SUNING",
   label = "Artist & Sculptor",
   statement = "Contemporary visual artist bridging Eastern and Arab cultures through sculpture, architecture, and narrative form.",
   scrollHint = "Scroll",
 }: {
+  name?: string;
   label?: string;
   statement?: string;
   scrollHint?: string;
@@ -115,7 +117,7 @@ export default function Hero({
             ease: [0.16, 1, 0.3, 1],
           }}
         >
-          SUNING
+          {name}
         </motion.h1>
 
         {/* Statement */}
