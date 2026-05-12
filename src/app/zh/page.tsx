@@ -59,7 +59,7 @@ export default async function ZhPage() {
           images={[
             {
               src: "/img/4.jpg",
-              alt: "GULF TIMES，2023",
+              alt: "GULF TIMES ,2025",
               layout: "wide",
             },
           ]}
