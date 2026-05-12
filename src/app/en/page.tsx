@@ -54,7 +54,7 @@ export default async function Page() {
           images={[
             {
               src: "/img/4.jpg",
-              alt: "SUNING — studio and practice",
+              alt: "GULF TIMES，2023",
               layout: "wide",
             },
           ]}
